@@ -1,2 +1,4 @@
-# No redirects — static HTML site
-# Access pages directly: /privacy.html /terms.html
+# Cloudflare Pages redirects intentionally disabled.
+# Legal pages are served directly:
+# /privacy.html
+# /terms.html
