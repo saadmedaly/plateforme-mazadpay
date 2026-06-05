@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/mazadpay-logo-transparent.png
+
+Sitemap: https://mazadpay.com/sitemap.xml
