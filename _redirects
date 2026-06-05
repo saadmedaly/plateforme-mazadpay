@@ -1,6 +1,4 @@
-# Cloudflare Pages — redirects (Static HTML, no SPA fallback)
-
-/privacy                /privacy.html   301
-/privacy-policy         /privacy.html   301
-/terms                  /terms.html     301
-/terms-and-conditions   /terms.html     301
+/privacy               /privacy.html  302
+/privacy-policy        /privacy.html  302
+/terms                 /terms.html    302
+/terms-and-conditions  /terms.html    302
