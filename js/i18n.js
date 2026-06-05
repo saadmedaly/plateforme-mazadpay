@@ -143,7 +143,7 @@ window.I18N = {
     fa_view_all: "عرض الكل",
     fa_current: "السعر الحالي", fa_bids: "مزايدة", fa_view: "عرض المزاد", fa_left: "متبقٍ",
     au1_t: "سيارة رباعية الدفع", au1_c: "سيارات",
-    au2_t: "عقار للإيجار", au2_c: "عقارات",
+    au2_t: "محل تجاري للإيجار", au2_c: "عقارات",
     au3_t: "حاسوب محمول", au3_c: "إلكترونيات",
     au4_t: "هاتف ذكي", au4_c: "هواتف",
 
@@ -183,6 +183,10 @@ window.I18N = {
     pn_foot: "جميع طبقات الحماية مفعّلة على حسابك.",
     sg_more: "اعرف المزيد",
     fav_aria: "إضافة للمفضلة",
+    hero_sub2: "اعرض منتجاتك، شارك في المزادات، اشحن رصيدك، واستفد من خدمات التوصيل عبر منصة آمنة وشفافة.",
+    dl_title2: "حمّل MazadPay وابدأ المزايدة الآن",
+    se5_t: "دعم محلي",
+    se5_p: "فريق دعم محلي جاهز لمساعدتك في أي وقت عبر قنوات التواصل.",
   },
 
   fr: {
@@ -352,6 +356,11 @@ window.I18N = {
     pn_foot: "Toutes les couches de protection sont actives.",
     sg_more: "En savoir plus",
     fav_aria: "Ajouter aux favoris",
+    hero_sub2: "Présentez vos produits, participez aux enchères, rechargez votre solde et profitez des services de livraison via une plateforme sûre et transparente.",
+    dl_title2: "Téléchargez MazadPay et enchérissez maintenant",
+    se5_t: "Support local",
+    se5_p: "Une équipe de support locale prête à vous aider à tout moment.",
+    au2_t: "Local commercial à louer",
   }
 };
 

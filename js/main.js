@@ -5,6 +5,7 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
+    footerYear();
     navScroll();
     mobileMenu();
     langButtons();
@@ -13,6 +14,12 @@
     counters();
     countdowns();
     contactForm();
+  }
+
+  /* footer year */
+  function footerYear() {
+    const el = document.getElementById("year");
+    if (el) el.textContent = new Date().getFullYear();
   }
 
   /* sticky header shadow */
