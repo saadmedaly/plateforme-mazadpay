@@ -115,6 +115,34 @@
 - [ ] `https://mazadpay.com/terms.html` تفتح
 - [ ] `https://www.mazadpay.com/` تفتح
 
+## فحص ما بعد النشر — Production
+
+- [ ] `https://mazadpay.com/` تفتح بـ 200 وبدون redirect loop
+- [ ] `https://www.mazadpay.com/` تفتح بـ 200
+- [ ] `https://mazadpay.com/privacy.html` تفتح بـ 200
+- [ ] `https://mazadpay.com/terms.html` تفتح بـ 200
+- [ ] `https://mazadpay.com/robots.txt` تفتح بـ 200
+- [ ] `https://mazadpay.com/sitemap.xml` تفتح بـ 200
+- [ ] الشعار ظاهر في الهيدر والفوتر
+- [ ] CSS يُحمَّل بشكل صحيح (لا تصميم مكسور)
+- [ ] خط Cairo يظهر (Google Fonts)
+- [ ] JavaScript يعمل (modal يفتح، language toggle يعمل)
+- [ ] زر "تحميل التطبيق" يفتح modal "قريباً"
+- [ ] زر "زايد الآن" يفتح modal "قريباً"
+- [ ] FAQ يعمل (accordion يفتح ويغلق)
+- [ ] Mobile menu يعمل على الهاتف
+- [ ] Language toggle AR/FR يعمل وتتغيّر النصوص
+- [ ] لا redirect loop على `/privacy.html` أو `/terms.html`
+- [ ] Security headers موجودة (CSP، X-Frame-Options…)
+- [ ] `script-src` لا يحتوي على `unsafe-inline`
+- [ ] لا errors في Console (Developer Tools)
+- [ ] Cloudflare Pages deployment status: **Success**
+
+### ملاحظة Cloudflare Pretty URLs
+> Cloudflare Pages يحوّل تلقائياً `/privacy.html` → `/privacy` (308 redirect).
+> هذا سلوك افتراضي من Cloudflare وليس من الكود — الصفحة تعمل بـ 200 في النهاية.
+> لا تضف redirects مضادة في `_redirects` لأنها ستسبب redirect loop.
+
 ---
 
 *آخر تحديث: 2026-06-05*
