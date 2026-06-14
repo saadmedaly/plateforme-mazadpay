@@ -1,0 +1,39 @@
+/* ===========================================================
+   Stitch Design Tokens — supplemental, additive only.
+   Loaded after styles.css and home.css.
+   Scope: Hero section refinements only (Phase 1).
+   =========================================================== */
+
+:root {
+  --stitch-primary: #1A56DB;
+  --stitch-navy:    #111827;
+  --stitch-green:   #059669;
+  --stitch-amber:   #D97706;
+  --stitch-green-bg: #ECFDF5;
+}
+
+/* ── Hero refinements ── */
+.hero__eyebrow {
+  color: var(--stitch-primary);
+  background: rgba(26, 86, 219, .08);
+  border-color: rgba(26, 86, 219, .16);
+}
+.hero__eyebrow .eyebrow__dot { background: var(--stitch-primary); }
+
+.hero__title { color: var(--stitch-navy); font-weight: 800; }
+.hero__title .accent { color: var(--stitch-primary); }
+
+.hero__sub { color: var(--slate); }
+
+.hero__cta .btn--primary {
+  background: var(--stitch-primary);
+  box-shadow: 0 10px 24px rgba(26, 86, 219, .22);
+}
+.hero__cta .btn--primary:hover { background: #1646b8; }
+.hero__cta .btn--ghost:hover { border-color: var(--stitch-primary); color: var(--stitch-primary); }
+
+.hero__trust .dot {
+  background: var(--stitch-green-bg);
+  color: var(--stitch-green);
+}
+.hero__trust .i { color: var(--stitch-navy); font-weight: 600; }
