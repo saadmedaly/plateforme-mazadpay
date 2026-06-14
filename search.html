@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نتائج البحث — MazadPay</title>
+  <meta name="description" content="ابحث في أكثر من 500 مزاد نشط على MazadPay. سيارات، عقارات، إلكترونيات ومعدات في موريتانيا."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    .search-hero { background: var(--surface-container); border-bottom: 1px solid var(--border-subtle); padding: 40px 0; }
+    .big-search { display: flex; align-items: center; background: #fff; border: 2px solid var(--border-subtle); border-radius: var(--radius-2xl); padding: 12px 20px; gap: 14px; transition: border-color var(--transition); max-width: 720px; }
+    .big-search:focus-within { border-color: var(--primary); }
+    .big-search .material-symbols-outlined { color: var(--outline); font-size: 24px; }
+    .big-search input { flex: 1; border: none; outline: none; font-family: inherit; font-size: var(--text-body-lg); color: var(--on-surface); }
+    .big-search button { background: var(--primary); color: #fff; padding: 10px 24px; border-radius: var(--radius-xl); font-family: inherit; font-weight: 700; font-size: var(--text-label-md); transition: opacity var(--transition); }
+    .big-search button:hover { opacity: .9; }
+    .suggest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .suggest-tag { padding: 6px 14px; border-radius: var(--radius-full); background: #fff; border: 1.5px solid var(--border-subtle); font-size: var(--text-label-sm); font-weight: 600; color: var(--on-surface-variant); cursor: pointer; transition: all var(--transition); }
+    .suggest-tag:hover { border-color: var(--primary); color: var(--primary); }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 1100px) { .results-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .results-grid { grid-template-columns: 1fr; } }
+    .no-results { text-align: center; padding: 80px 0; }
+    .no-results .material-symbols-outlined { font-size: 80px; color: var(--outline-variant); display: block; margin-bottom: 16px; }
+    .sort-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+    .sort-bar .count { font-size: var(--text-body-sm); color: var(--on-surface-variant); }
+    .sort-bar select { font-family: inherit; font-size: var(--text-label-md); font-weight: 600; color: var(--on-surface); background: #fff; border: 1.5px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 8px 16px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span style="display:flex;align-items:center;gap:6px"><span class="material-symbols-outlined" style="font-size:16px">location_on</span> نواكشوط، موريتانيا</span>
+    </div>
+    <div class="topbar-right"><button>AR / FR</button></div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="assets/mazadpay-logo-transparent.png" alt="" class="site-logo-img"/>MazadPay
+    </a>
+    <div class="header-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" id="header-search-input" placeholder="ابحث عن سيارات، عقارات، أو إلكترونيات..." aria-label="البحث"/>
+      <div class="divider"></div>
+      <select aria-label="التصنيف">
+        <option>كل التصنيفات</option><option>سيارات</option><option>عقارات</option><option>إلكترونيات</option>
+      </select>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="auctions.html">المزادات</a>
+      <a href="categories.html">التصنيفات</a>
+      <a href="about-security.html">الأمان</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <button class="btn-primary header-cta" id="header-download-btn">
+      <span class="material-symbols-outlined">download</span> تحميل التطبيق
+    </button>
+    <button class="burger-btn" id="burger-btn" aria-label="القائمة" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="القائمة">
+  <nav class="mobile-menu-panel">
+    <div class="mobile-menu-close"><button class="btn-ghost" id="menu-close-btn" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button></div>
+    <a href="index.html"><span class="material-symbols-outlined">home</span> الرئيسية</a>
+    <a href="auctions.html"><span class="material-symbols-outlined">gavel</span> المزادات</a>
+    <a href="categories.html"><span class="material-symbols-outlined">category</span> التصنيفات</a>
+    <a href="contact.html"><span class="material-symbols-outlined">mail</span> تواصل معنا</a>
+  </nav>
+  <button style="flex:1;background:transparent;border:none" id="menu-backdrop" aria-label="إغلاق القائمة"></button>
+</div>
+
+<!-- Search Hero -->
+<section class="search-hero">
+  <div class="container">
+    <div class="big-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" id="main-search" placeholder="ابحث عن أي شيء..." aria-label="البحث الرئيسي" value="تويوتا"/>
+      <button type="button" id="do-search">بحث</button>
+    </div>
+    <div class="suggest-tags" id="suggest-tags">
+      <button class="suggest-tag" data-q="تويوتا">تويوتا</button>
+      <button class="suggest-tag" data-q="عقار نواكشوط">عقار نواكشوط</button>
+      <button class="suggest-tag" data-q="ايفون">ايفون</button>
+      <button class="suggest-tag" data-q="ميتسوبيشي">ميتسوبيشي</button>
+      <button class="suggest-tag" data-q="حفارة">حفارة</button>
+      <button class="suggest-tag" data-q="لابتوب">لابتوب</button>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container" style="padding:40px 0 80px">
+    <!-- Results header -->
+    <div style="margin-bottom:24px">
+      <h1 style="font-size:var(--text-headline-md);font-weight:800;margin-bottom:6px">
+        نتائج البحث عن: <span id="search-query" style="color:var(--primary)">"تويوتا"</span>
+      </h1>
+      <p style="color:var(--on-surface-variant)">تم العثور على <strong id="result-count">5</strong> نتيجة</p>
+    </div>
+
+    <!-- Quick filters -->
+    <div class="filters-bar">
+      <button class="filter-chip active" data-cat="">الكل</button>
+      <button class="filter-chip" data-cat="cars"><span class="material-symbols-outlined" style="font-size:16px">directions_car</span> سيارات</button>
+      <button class="filter-chip" data-cat="real-estate"><span class="material-symbols-outlined" style="font-size:16px">apartment</span> عقارات</button>
+      <button class="filter-chip" data-cat="electronics"><span class="material-symbols-outlined" style="font-size:16px">devices</span> إلكترونيات</button>
+    </div>
+
+    <div class="sort-bar">
+      <span class="count">عرض <strong>5</strong> نتيجة لـ "تويوتا"</span>
+      <select aria-label="ترتيب النتائج">
+        <option>الأكثر صلة</option>
+        <option>السعر: الأعلى</option>
+        <option>السعر: الأقل</option>
+        <option>ينتهي قريباً</option>
+      </select>
+    </div>
+
+    <div class="results-grid" id="results-grid">
+      <article class="auction-card">
+        <div class="auction-card-img">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfj_HtCjoA4zElG9VZpNcAyKtiyODxFrjtYYJpHXww7iDgYE1IpoeHGlvb7Ca1mAVdovO3pADVR-q_600nwGv3bQ0OglljI4usXzWQjc8xe1bNx27xNj0pe7QfG4WYhLMyDdpVg6Zo5qrFpdpODB7UZrNuDbUefxQgfqM8lxBZASKGWZ5f6qZ69dRNWXrL_0DhjGtnQIdZkpXJDtr4b2Il4wPxtdPt6byA0V7xC7AkfrIdux7obWY5loJPVVNTe91-9QVb7_c-A" alt="تويوتا كورولا 2023" loading="lazy"/>
+          <span class="badge badge-verified badge-abs-tr"><span class="material-symbols-outlined" style="font-size:13px">verified</span> موثق</span>
+        </div>
+        <div class="auction-card-body">
+          <span class="auction-card-cat">سيارات</span>
+          <h3 class="auction-card-title">تويوتا كورولا 2023 — حالة ممتازة</h3>
+          <div class="auction-card-meta">
+            <div><div class="label">المزاد الحالي</div><div class="value">450,000 MRU</div></div>
+            <div><div class="label">المزايدات</div><div class="value small">12 عرض</div></div>
+          </div>
+          <div class="auction-card-timer"><span class="material-symbols-outlined" style="font-size:15px">schedule</span> ينتهي: <span class="countdown-inline" data-end="7200">02:00:00</span></div>
+          <div class="auction-card-footer"><a href="auction-detail.html" class="btn-primary">زايد الآن</a></div>
+        </div>
+      </article>
+      <article class="auction-card">
+        <div class="auction-card-img">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfj_HtCjoA4zElG9VZpNcAyKtiyODxFrjtYYJpHXww7iDgYE1IpoeHGlvb7Ca1mAVdovO3pADVR-q_600nwGv3bQ0OglljI4usXzWQjc8xe1bNx27xNj0pe7QfG4WYhLMyDdpVg6Zo5qrFpdpODB7UZrNuDbUefxQgfqM8lxBZASKGWZ5f6qZ69dRNWXrL_0DhjGtnQIdZkpXJDtr4b2Il4wPxtdPt6byA0V7xC7AkfrIdux7obWY5loJPVVNTe91-9QVb7_c-A" alt="تويوتا هايلكس 2022" loading="lazy"/>
+          <span class="badge badge-verified badge-abs-tr"><span class="material-symbols-outlined" style="font-size:13px">verified</span> موثق</span>
+        </div>
+        <div class="auction-card-body">
+          <span class="auction-card-cat">سيارات</span>
+          <h3 class="auction-card-title">تويوتا هايلكس 2022 — 4x4 كاملة</h3>
+          <div class="auction-card-meta">
+            <div><div class="label">المزاد الحالي</div><div class="value">1,250,000 MRU</div></div>
+            <div><div class="label">المزايدات</div><div class="value small">7 عروض</div></div>
+          </div>
+          <div class="auction-card-timer"><span class="material-symbols-outlined" style="font-size:15px">schedule</span> ينتهي: <span class="countdown-inline" data-end="86400">24:00:00</span></div>
+          <div class="auction-card-footer"><a href="auction-detail.html" class="btn-primary">زايد الآن</a></div>
+        </div>
+      </article>
+      <article class="auction-card">
+        <div class="auction-card-img">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfj_HtCjoA4zElG9VZpNcAyKtiyODxFrjtYYJpHXww7iDgYE1IpoeHGlvb7Ca1mAVdovO3pADVR-q_600nwGv3bQ0OglljI4usXzWQjc8xe1bNx27xNj0pe7QfG4WYhLMyDdpVg6Zo5qrFpdpODB7UZrNuDbUefxQgfqM8lxBZASKGWZ5f6qZ69dRNWXrL_0DhjGtnQIdZkpXJDtr4b2Il4wPxtdPt6byA0V7xC7AkfrIdux7obWY5loJPVVNTe91-9QVb7_c-A" alt="تويوتا راف فور 2021" loading="lazy"/>
+          <span class="badge badge-verified badge-abs-tr"><span class="material-symbols-outlined" style="font-size:13px">verified</span> موثق</span>
+        </div>
+        <div class="auction-card-body">
+          <span class="auction-card-cat">سيارات</span>
+          <h3 class="auction-card-title">تويوتا راف فور 2021 — خليجي</h3>
+          <div class="auction-card-meta">
+            <div><div class="label">المزاد الحالي</div><div class="value">780,000 MRU</div></div>
+            <div><div class="label">المزايدات</div><div class="value small">5 عروض</div></div>
+          </div>
+          <div class="auction-card-timer"><span class="material-symbols-outlined" style="font-size:15px">schedule</span> ينتهي: <span class="countdown-inline" data-end="43200">12:00:00</span></div>
+          <div class="auction-card-footer"><a href="auction-detail.html" class="btn-primary">زايد الآن</a></div>
+        </div>
+      </article>
+      <article class="auction-card">
+        <div class="auction-card-img">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfj_HtCjoA4zElG9VZpNcAyKtiyODxFrjtYYJpHXww7iDgYE1IpoeHGlvb7Ca1mAVdovO3pADVR-q_600nwGv3bQ0OglljI4usXzWQjc8xe1bNx27xNj0pe7QfG4WYhLMyDdpVg6Zo5qrFpdpODB7UZrNuDbUefxQgfqM8lxBZASKGWZ5f6qZ69dRNWXrL_0DhjGtnQIdZkpXJDtr4b2Il4wPxtdPt6byA0V7xC7AkfrIdux7obWY5loJPVVNTe91-9QVb7_c-A" alt="تويوتا لاند كروزر" loading="lazy"/>
+          <span class="badge badge-verified badge-abs-tr"><span class="material-symbols-outlined" style="font-size:13px">verified</span> موثق</span>
+        </div>
+        <div class="auction-card-body">
+          <span class="auction-card-cat">سيارات</span>
+          <h3 class="auction-card-title">تويوتا لاند كروزر 200 — بلاتينيوم</h3>
+          <div class="auction-card-meta">
+            <div><div class="label">المزاد الحالي</div><div class="value">3,200,000 MRU</div></div>
+            <div><div class="label">المزايدات</div><div class="value small">2 عروض</div></div>
+          </div>
+          <div class="auction-card-timer"><span class="material-symbols-outlined" style="font-size:15px">schedule</span> ينتهي: <span class="countdown-inline" data-end="172800">48:00:00</span></div>
+          <div class="auction-card-footer"><a href="auction-detail.html" class="btn-primary">زايد الآن</a></div>
+        </div>
+      </article>
+      <article class="auction-card">
+        <div class="auction-card-img">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjfj_HtCjoA4zElG9VZpNcAyKtiyODxFrjtYYJpHXww7iDgYE1IpoeHGlvb7Ca1mAVdovO3pADVR-q_600nwGv3bQ0OglljI4usXzWQjc8xe1bNx27xNj0pe7QfG4WYhLMyDdpVg6Zo5qrFpdpODB7UZrNuDbUefxQgfqM8lxBZASKGWZ5f6qZ69dRNWXrL_0DhjGtnQIdZkpXJDtr4b2Il4wPxtdPt6byA0V7xC7AkfrIdux7obWY5loJPVVNTe91-9QVb7_c-A" alt="تويوتا برادو 2020" loading="lazy"/>
+          <span class="badge badge-verified badge-abs-tr"><span class="material-symbols-outlined" style="font-size:13px">verified</span> موثق</span>
+        </div>
+        <div class="auction-card-body">
+          <span class="auction-card-cat">سيارات</span>
+          <h3 class="auction-card-title">تويوتا برادو 2020 — تيه كامل</h3>
+          <div class="auction-card-meta">
+            <div><div class="label">المزاد الحالي</div><div class="value">1,600,000 MRU</div></div>
+            <div><div class="label">المزايدات</div><div class="value small">8 عروض</div></div>
+          </div>
+          <div class="auction-card-timer"><span class="material-symbols-outlined" style="font-size:15px">schedule</span> ينتهي: <span class="countdown-inline" data-end="21600">06:00:00</span></div>
+          <div class="auction-card-footer"><a href="auction-detail.html" class="btn-primary">زايد الآن</a></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Suggested searches -->
+    <div style="margin-top:64px;padding-top:48px;border-top:1px solid var(--border-subtle)">
+      <h3 style="font-size:var(--text-headline-sm);font-weight:800;margin-bottom:20px">عمليات بحث شائعة</h3>
+      <div class="suggest-tags">
+        <a href="search.html" class="suggest-tag">كورولا</a>
+        <a href="search.html" class="suggest-tag">iPhone 15</a>
+        <a href="search.html" class="suggest-tag">فيلا تفرغ زينة</a>
+        <a href="search.html" class="suggest-tag">حفارة JCB</a>
+        <a href="search.html" class="suggest-tag">MacBook</a>
+        <a href="search.html" class="suggest-tag">شاحنة</a>
+        <a href="search.html" class="suggest-tag">هيونداي توسان</a>
+        <a href="search.html" class="suggest-tag">لاند كروزر</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>MazadPay</h3><p>الوجهة الأولى للمزادات في موريتانيا.</p></div>
+      <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="auctions.html">المزادات</a></li><li><a href="help.html">المساعدة</a></li></ul></div>
+      <div class="footer-col"><h4>قانوني</h4><ul><li><a href="privacy.html">الخصوصية</a></li><li><a href="terms.html">الشروط</a></li></ul></div>
+      <div class="footer-col"><h4>تواصل</h4><a href="contact.html" class="whatsapp-btn"><span class="material-symbols-outlined">chat</span> واتساب</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 MazadPay Mauritania. كل الحقوق محفوظة.</p></div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="app-modal" role="dialog" aria-modal="true">
+  <div class="modal-panel">
+    <button class="modal-close" id="app-modal-close" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button>
+    <div style="text-align:center;padding-top:8px">
+      <span class="material-symbols-outlined" style="font-size:64px;color:var(--primary);margin-bottom:16px;display:block">smartphone</span>
+      <h2 style="font-size:var(--text-headline-md);font-weight:800;margin-bottom:12px">التطبيق قادم قريباً!</h2>
+      <button class="btn-primary w-full" style="justify-content:center" id="app-modal-ok">حسناً!</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.site-logo-img').forEach(img => {
+    img.addEventListener('error', () => { img.style.display = 'none'; });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    document.getElementById('mobile-menu')?.classList.remove('open');
+  });
+  window.addEventListener('scroll', () => { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 0); }, { passive: true });
+  const mm = document.getElementById('mobile-menu'), bb = document.getElementById('burger-btn');
+  bb.addEventListener('click', () => { mm.classList.add('open'); bb.setAttribute('aria-expanded','true'); });
+  document.getElementById('menu-close-btn').addEventListener('click', () => mm.classList.remove('open'));
+  document.getElementById('menu-backdrop').addEventListener('click', () => mm.classList.remove('open'));
+  // Filter chips
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+  // Search
+  document.getElementById('do-search')?.addEventListener('click', () => {
+    const q = document.getElementById('main-search').value.trim();
+    if (q) { document.getElementById('search-query').textContent = '"' + q + '"'; }
+  });
+  document.querySelectorAll('.suggest-tag').forEach(t => {
+    t.addEventListener('click', () => {
+      const q = t.dataset.q || t.textContent;
+      document.getElementById('main-search').value = q;
+      document.getElementById('search-query').textContent = '"' + q + '"';
+    });
+  });
+  // Countdowns
+  document.querySelectorAll('.countdown-inline').forEach(el => {
+    let s = parseInt(el.dataset.end, 10);
+    (function tick() {
+      const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+      el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+      if (s-- > 0) setTimeout(tick, 1000);
+    })();
+  });
+  const am = document.getElementById('app-modal');
+  document.getElementById('header-download-btn')?.addEventListener('click', () => am.classList.add('open'));
+  document.getElementById('app-modal-close').addEventListener('click', () => am.classList.remove('open'));
+  document.getElementById('app-modal-ok').addEventListener('click', () => am.classList.remove('open'));
+  am.addEventListener('click', e => { if (e.target === am) am.classList.remove('open'); });
+</script>
+</body>
+</html>

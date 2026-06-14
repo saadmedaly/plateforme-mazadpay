@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الأمان ومن نحن — MazadPay</title>
+  <meta name="description" content="تعرّف على منصة MazadPay، سياستنا الأمنية، وكيف نحمي بياناتك ومعاملاتك. أول منصة مزادات موثوقة في موريتانيا."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    .about-hero { background: linear-gradient(135deg, var(--inverse-surface) 0%, #1a1f2e 100%); color: #fff; padding: 80px 0; }
+    .about-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 16px; }
+    .about-hero p { font-size: var(--text-body-lg); opacity: .8; max-width: 600px; line-height: 1.7; }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } }
+    .team-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-2xl); padding: 28px; text-align: center; }
+    .team-avatar { width: 80px; height: 80px; border-radius: var(--radius-full); background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: var(--text-headline-md); font-weight: 800; margin: 0 auto 16px; }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item { display: flex; gap: 24px; padding-bottom: 40px; position: relative; }
+    .timeline-item::before { content: ''; position: absolute; right: 19px; top: 40px; bottom: 0; width: 2px; background: var(--border-subtle); }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .timeline-content h3 { font-weight: 700; margin-bottom: 6px; }
+    .timeline-content p { color: var(--on-surface-variant); font-size: var(--text-body-md); line-height: 1.7; }
+    .security-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    @media (max-width: 640px) { .security-grid { grid-template-columns: 1fr; } }
+    .security-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-2xl); padding: 28px; }
+    .security-icon { width: 56px; height: 56px; border-radius: var(--radius-xl); background: rgba(0,63,177,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .security-icon .material-symbols-outlined { font-size: 28px; color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span style="display:flex;align-items:center;gap:6px"><span class="material-symbols-outlined" style="font-size:16px">location_on</span> نواكشوط، موريتانيا</span>
+    </div>
+    <div class="topbar-right"><button>AR / FR</button></div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="assets/mazadpay-logo-transparent.png" alt="" class="site-logo-img"/>MazadPay
+    </a>
+    <div class="header-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="ابحث عن سيارات، عقارات، أو إلكترونيات..." aria-label="البحث"/>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="auctions.html">المزادات</a>
+      <a href="categories.html">التصنيفات</a>
+      <a href="about-security.html" class="active">الأمان</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <button class="btn-primary header-cta" id="header-download-btn">
+      <span class="material-symbols-outlined">download</span> تحميل التطبيق
+    </button>
+    <button class="burger-btn" id="burger-btn" aria-label="القائمة" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="القائمة">
+  <nav class="mobile-menu-panel">
+    <div class="mobile-menu-close"><button class="btn-ghost" id="menu-close-btn" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button></div>
+    <a href="index.html"><span class="material-symbols-outlined">home</span> الرئيسية</a>
+    <a href="auctions.html"><span class="material-symbols-outlined">gavel</span> المزادات</a>
+    <a href="categories.html"><span class="material-symbols-outlined">category</span> التصنيفات</a>
+    <a href="about-security.html" class="active"><span class="material-symbols-outlined">verified_user</span> الأمان</a>
+    <a href="help.html"><span class="material-symbols-outlined">help</span> المساعدة</a>
+    <a href="contact.html"><span class="material-symbols-outlined">mail</span> تواصل معنا</a>
+  </nav>
+  <button style="flex:1;background:transparent;border:none" id="menu-backdrop" aria-label="إغلاق القائمة"></button>
+</div>
+
+<!-- Hero -->
+<section class="about-hero">
+  <div class="container">
+    <div class="breadcrumb" style="color:rgba(255,255,255,.6);margin-bottom:20px">
+      <a href="index.html" style="color:#fff">الرئيسية</a>
+      <span class="sep material-symbols-outlined" style="font-size:16px;color:rgba(255,255,255,.4)">chevron_left</span>
+      <span>الأمان ومن نحن</span>
+    </div>
+    <h1>الأمان ومن نحن</h1>
+    <p>MazadPay أول منصة مزادات إلكترونية في موريتانيا، نُولي الأمان والشفافية أولويتنا القصوى في كل معاملة.</p>
+  </div>
+</section>
+
+<main>
+  <!-- About us -->
+  <section style="padding:80px 0">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,63,177,.1);color:var(--primary);padding:6px 14px;border-radius:var(--radius-full);font-size:var(--text-label-sm);font-weight:700;margin-bottom:16px">
+            <span class="material-symbols-outlined" style="font-size:16px">info</span> من نحن
+          </div>
+          <h2 style="font-size:var(--text-headline-lg);font-weight:800;margin-bottom:16px">قصة MazadPay</h2>
+          <p style="color:var(--on-surface-variant);font-size:var(--text-body-lg);line-height:1.8;margin-bottom:20px">
+            وُلدت MazadPay من رحم الحاجة الحقيقية لسوق موريتاني رقمي موثوق. شريكنا هو المواطن الموريتاني الذي يريد بيع سيارته أو شراء منزل أو الحصول على أفضل سعر بشفافية كاملة.
+          </p>
+          <p style="color:var(--on-surface-variant);font-size:var(--text-body-md);line-height:1.8">
+            منذ تأسيسنا، عملنا مع أكثر من 1000 مستخدم موثق وأنجزنا مئات المزادات بنجاح. مهمتنا: إتاحة المزادات العلنية لكل موريتاني، بأعلى معايير الأمان والشفافية.
+          </p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:var(--primary);color:#fff;border-radius:var(--radius-2xl);padding:28px;text-align:center">
+            <div style="font-size:2.5rem;font-weight:800">+200</div>
+            <div style="opacity:.8;font-size:var(--text-label-md)">مزاد منجز</div>
+          </div>
+          <div style="background:var(--surface-container);border-radius:var(--radius-2xl);padding:28px;text-align:center">
+            <div style="font-size:2.5rem;font-weight:800;color:var(--primary)">+1000</div>
+            <div style="color:var(--on-surface-variant);font-size:var(--text-label-md)">مستخدم موثق</div>
+          </div>
+          <div style="background:var(--surface-container);border-radius:var(--radius-2xl);padding:28px;text-align:center">
+            <div style="font-size:2.5rem;font-weight:800;color:var(--primary)">+40</div>
+            <div style="color:var(--on-surface-variant);font-size:var(--text-label-md)">تصنيف مختلف</div>
+          </div>
+          <div style="background:var(--safety-green);color:#fff;border-radius:var(--radius-2xl);padding:28px;text-align:center">
+            <div style="font-size:2.5rem;font-weight:800">4.9★</div>
+            <div style="opacity:.85;font-size:var(--text-label-md)">تقييم المستخدمين</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section style="background:var(--surface-container);padding:80px 0">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px">
+        <h2 style="font-size:var(--text-headline-lg);font-weight:800;margin-bottom:12px">كيف نحمي معاملاتك؟</h2>
+        <p style="color:var(--on-surface-variant);max-width:560px;margin-inline:auto;font-size:var(--text-body-lg)">طبقات متعددة من الأمان لضمان تجربة آمنة تماماً</p>
+      </div>
+      <div class="security-grid">
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">lock</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">تشفير SSL/TLS</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">جميع البيانات المنقولة مشفرة بأحدث معايير التشفير لمنع أي اعتراض أو تنصت.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">verified_user</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">توثيق الهوية</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">كل بائع يخضع لعملية توثيق صارمة برقم الهاتف والوثائق الرسمية قبل نشر أي مزاد.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">payments</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">دفع محمي</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">نستخدم نظام الضمان (Escrow) لحجب المبلغ حتى يستلم المشتري سلعته ويؤكد رضاه.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">gavel</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">مراجعة المزادات</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">فريق التحقق لدينا يراجع كل مزاد يدوياً قبل نشره للتأكد من صحة المعلومات والصور.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">support_agent</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">دعم 24/7</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">فريق دعم بشري متواجد على مدار الساعة عبر واتساب لحل أي نزاع أو استفسار فوري.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon"><span class="material-symbols-outlined">policy</span></div>
+          <h3 style="font-weight:800;margin-bottom:8px">حماية الخصوصية</h3>
+          <p style="color:var(--on-surface-variant);line-height:1.7">بياناتك الشخصية محمية ولا تُشارك مع أطراف ثالثة إطلاقاً، وفق سياسة الخصوصية الصارمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auction Rules -->
+  <section style="padding:80px 0">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+        <div>
+          <h2 style="font-size:var(--text-headline-lg);font-weight:800;margin-bottom:32px">قواعد المزادات</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"><span class="material-symbols-outlined" style="font-size:20px">how_to_reg</span></div>
+              <div class="timeline-content">
+                <h3>التسجيل والتوثيق</h3>
+                <p>يجب توثيق حسابك برقم هاتف موريتاني صالح. للبيع، تُطلب وثيقة هوية رسمية.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><span class="material-symbols-outlined" style="font-size:20px">account_balance</span></div>
+              <div class="timeline-content">
+                <h3>الإيداع التأميني</h3>
+                <p>تتطلب بعض المزادات إيداعاً تأمينياً يُسترد كاملاً في حال عدم الفوز بالمزاد.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><span class="material-symbols-outlined" style="font-size:20px">timer</span></div>
+              <div class="timeline-content">
+                <h3>قواعد الوقت</h3>
+                <p>يُمدَّد وقت المزاد تلقائياً بـ 5 دقائق إذا وُضع عرض في آخر دقيقتين.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><span class="material-symbols-outlined" style="font-size:20px">payments</span></div>
+              <div class="timeline-content">
+                <h3>الدفع والاستلام</h3>
+                <p>على الفائز إتمام الدفع خلال 48 ساعة من إغلاق المزاد. التأخير يلغي الفوز.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:var(--text-headline-lg);font-weight:800;margin-bottom:32px">ضمان المنصة</h2>
+          <div style="background:var(--surface-container);border-radius:var(--radius-2xl);padding:32px;margin-bottom:24px">
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+              <span class="material-symbols-outlined" style="font-size:40px;color:var(--primary)">verified</span>
+              <div>
+                <h3 style="font-weight:800">ضمان المشتري</h3>
+                <p style="color:var(--on-surface-variant);font-size:var(--text-body-sm)">نحمي حقك في استرداد المبلغ إذا لم تتطابق السلعة مع الوصف</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+              <span class="material-symbols-outlined" style="font-size:40px;color:var(--safety-green)">storefront</span>
+              <div>
+                <h3 style="font-weight:800">ضمان البائع</h3>
+                <p style="color:var(--on-surface-variant);font-size:var(--text-body-sm)">المبالغ المستحقة لك آمنة ومحجوزة حتى تأكيد الاستلام</p>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <span class="material-symbols-outlined" style="font-size:40px;color:var(--warning-amber)">balance</span>
+              <div>
+                <h3 style="font-weight:800">حل النزاعات</h3>
+                <p style="color:var(--on-surface-variant);font-size:var(--text-body-sm)">فريق متخصص يفصل في النزاعات خلال 72 ساعة عمل</p>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-primary w-full" style="justify-content:center;padding:16px">
+            <span class="material-symbols-outlined">help</span>
+            تواصل مع فريق الأمان
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background:var(--surface-container);padding:80px 0">
+    <div class="container">
+      <div style="max-width:720px;margin-inline:auto">
+        <h2 style="text-align:center;font-size:var(--text-headline-lg);font-weight:800;margin-bottom:48px">أسئلة شائعة حول الأمان</h2>
+        <div class="faq-item"><button class="faq-trigger">هل معاملاتي مشفرة؟ <span class="material-symbols-outlined">expand_more</span></button><div class="faq-body">نعم، جميع البيانات المرسلة عبر منصتنا مشفرة بمعيار SSL 256-bit. بياناتك المالية والشخصية محمية بالكامل.</div></div>
+        <div class="faq-item"><button class="faq-trigger">ماذا يحدث إذا لم أستلم سلعتي؟ <span class="material-symbols-outlined">expand_more</span></button><div class="faq-body">نحتجز المبلغ في حساب الضمان حتى تأكيد الاستلام. إذا لم تستلم السلعة، سنسترد مبلغك كاملاً وفتح تحقيق مع البائع.</div></div>
+        <div class="faq-item"><button class="faq-trigger">كيف أُبلّغ عن مزاد مشبوه؟ <span class="material-symbols-outlined">expand_more</span></button><div class="faq-body">يمكنك الإبلاغ مباشرة عبر زر "الإبلاغ" في صفحة المزاد، أو التواصل مع فريقنا عبر واتساب. نتخذ إجراءات خلال ساعات.</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>MazadPay</h3><p>الوجهة الأولى للمزادات في موريتانيا.</p></div>
+      <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="auctions.html">المزادات</a></li><li><a href="help.html">المساعدة</a></li></ul></div>
+      <div class="footer-col"><h4>قانوني</h4><ul><li><a href="privacy.html">الخصوصية</a></li><li><a href="terms.html">الشروط</a></li></ul></div>
+      <div class="footer-col"><h4>تواصل</h4><a href="contact.html" class="whatsapp-btn"><span class="material-symbols-outlined">chat</span> واتساب</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 MazadPay Mauritania. كل الحقوق محفوظة.</p></div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="app-modal" role="dialog" aria-modal="true">
+  <div class="modal-panel">
+    <button class="modal-close" id="app-modal-close" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button>
+    <div style="text-align:center;padding-top:8px">
+      <span class="material-symbols-outlined" style="font-size:64px;color:var(--primary);margin-bottom:16px;display:block">smartphone</span>
+      <h2 style="font-size:var(--text-headline-md);font-weight:800;margin-bottom:12px">التطبيق قادم قريباً!</h2>
+      <button class="btn-primary w-full" style="justify-content:center" id="app-modal-ok">حسناً!</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.site-logo-img').forEach(img => {
+    img.addEventListener('error', () => { img.style.display = 'none'; });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    document.getElementById('mobile-menu')?.classList.remove('open');
+  });
+  window.addEventListener('scroll', () => { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 0); }, { passive: true });
+  const mm = document.getElementById('mobile-menu'), bb = document.getElementById('burger-btn');
+  bb.addEventListener('click', () => { mm.classList.add('open'); bb.setAttribute('aria-expanded','true'); });
+  document.getElementById('menu-close-btn').addEventListener('click', () => mm.classList.remove('open'));
+  document.getElementById('menu-backdrop').addEventListener('click', () => mm.classList.remove('open'));
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement, wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+  const am = document.getElementById('app-modal');
+  document.getElementById('header-download-btn')?.addEventListener('click', () => am.classList.add('open'));
+  document.getElementById('app-modal-close').addEventListener('click', () => am.classList.remove('open'));
+  document.getElementById('app-modal-ok').addEventListener('click', () => am.classList.remove('open'));
+  am.addEventListener('click', e => { if (e.target === am) am.classList.remove('open'); });
+  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

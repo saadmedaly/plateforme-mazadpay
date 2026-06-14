@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>التصنيفات — MazadPay</title>
+  <meta name="description" content="تصفح كل تصنيفات مزادات MazadPay: سيارات، عقارات، إلكترونيات، معدات، خدمات وأكثر من 40 تصنيف."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    .cat-hero { background: linear-gradient(135deg, var(--primary) 0%, #1a56db 100%); color: #fff; padding: 64px 0 48px; }
+    .cat-hero h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 10px; }
+    .cat-hero p { opacity: .85; font-size: var(--text-body-lg); }
+    .cat-search { background: #fff; border-radius: var(--radius-2xl); padding: 10px 20px; display: flex; align-items: center; gap: 10px; margin-top: 32px; max-width: 480px; }
+    .cat-search input { flex: 1; border: none; outline: none; font-family: inherit; font-size: var(--text-body-md); }
+    .cat-search .material-symbols-outlined { color: var(--outline); }
+    .big-cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .big-cat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .big-cat-grid { grid-template-columns: 1fr; } }
+    .big-cat-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: var(--radius-2xl); padding: 32px 24px; display: flex; align-items: center; gap: 20px; transition: box-shadow var(--transition), border-color var(--transition); cursor: pointer; }
+    .big-cat-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+    .big-cat-icon { width: 72px; height: 72px; border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .big-cat-icon .material-symbols-outlined { font-size: 32px; }
+    .big-cat-title { font-size: var(--text-headline-sm); font-weight: 800; margin-bottom: 4px; }
+    .big-cat-desc { font-size: var(--text-body-sm); color: var(--on-surface-variant); margin-bottom: 8px; }
+    .sub-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .sub-cat { font-size: 11px; background: var(--surface-container); color: var(--on-surface-variant); padding: 3px 10px; border-radius: var(--radius-full); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span style="display:flex;align-items:center;gap:6px"><span class="material-symbols-outlined" style="font-size:16px">location_on</span> نواكشوط، موريتانيا</span>
+    </div>
+    <div class="topbar-right"><button>AR / FR</button></div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <img src="assets/mazadpay-logo-transparent.png" alt="" class="site-logo-img"/>MazadPay
+    </a>
+    <div class="header-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="ابحث عن سيارات، عقارات، أو إلكترونيات..." aria-label="البحث"/>
+      <div class="divider"></div>
+      <select aria-label="التصنيف"><option>كل التصنيفات</option><option>سيارات</option><option>عقارات</option></select>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="auctions.html">المزادات</a>
+      <a href="categories.html" class="active">التصنيفات</a>
+      <a href="about-security.html">الأمان</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+    <button class="btn-primary header-cta" id="header-download-btn">
+      <span class="material-symbols-outlined">download</span> تحميل التطبيق
+    </button>
+    <button class="burger-btn" id="burger-btn" aria-label="القائمة" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="القائمة">
+  <nav class="mobile-menu-panel">
+    <div class="mobile-menu-close"><button class="btn-ghost" id="menu-close-btn" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button></div>
+    <a href="index.html"><span class="material-symbols-outlined">home</span> الرئيسية</a>
+    <a href="auctions.html"><span class="material-symbols-outlined">gavel</span> المزادات</a>
+    <a href="categories.html" class="active"><span class="material-symbols-outlined">category</span> التصنيفات</a>
+    <a href="about-security.html"><span class="material-symbols-outlined">verified_user</span> الأمان</a>
+    <a href="help.html"><span class="material-symbols-outlined">help</span> المساعدة</a>
+    <a href="contact.html"><span class="material-symbols-outlined">mail</span> تواصل معنا</a>
+  </nav>
+  <button style="flex:1;background:transparent;border:none" id="menu-backdrop" aria-label="إغلاق القائمة"></button>
+</div>
+
+<!-- Hero -->
+<section class="cat-hero">
+  <div class="container">
+    <div class="breadcrumb" style="color:rgba(255,255,255,.7);margin-bottom:16px">
+      <a href="index.html" style="color:#fff">الرئيسية</a>
+      <span class="sep material-symbols-outlined" style="font-size:16px;color:rgba(255,255,255,.5)">chevron_left</span>
+      <span>التصنيفات</span>
+    </div>
+    <h1>استعرض التصنيفات</h1>
+    <p>أكثر من 40 تصنيفاً مختلفاً تشمل كل ما تبحث عنه</p>
+    <div class="cat-search">
+      <span class="material-symbols-outlined">search</span>
+      <input type="text" placeholder="ابحث في التصنيفات..."/>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- Stats -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-value">+40</div><div class="stat-label">تصنيف مختلف</div></div>
+        <div class="stat-item"><div class="stat-value">+500</div><div class="stat-label">مزاد نشط</div></div>
+        <div class="stat-item"><div class="stat-value">+1000</div><div class="stat-label">بائع موثق</div></div>
+        <div class="stat-item"><div class="stat-value">24/7</div><div class="stat-label">دعم محلي</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Categories -->
+  <section style="padding:80px 0">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <h2>التصنيفات الرئيسية</h2>
+          <p>الفئات الأكثر نشاطاً على المنصة</p>
+        </div>
+      </div>
+      <div class="big-cat-grid">
+        <a href="auctions.html?cat=cars" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(0,63,177,.1)">
+            <span class="material-symbols-outlined" style="color:var(--primary)">directions_car</span>
+          </div>
+          <div>
+            <div class="big-cat-title">السيارات</div>
+            <div class="big-cat-desc">+40 مزاد نشط</div>
+            <div class="sub-cats">
+              <span class="sub-cat">سيارات خاصة</span>
+              <span class="sub-cat">شاحنات</span>
+              <span class="sub-cat">4x4</span>
+              <span class="sub-cat">حافلات</span>
+            </div>
+          </div>
+        </a>
+        <a href="auctions.html?cat=real-estate" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(5,150,105,.1)">
+            <span class="material-symbols-outlined" style="color:var(--safety-green)">apartment</span>
+          </div>
+          <div>
+            <div class="big-cat-title">العقارات</div>
+            <div class="big-cat-desc">+15 مزاد نشط</div>
+            <div class="sub-cats">
+              <span class="sub-cat">منازل سكنية</span>
+              <span class="sub-cat">شقق</span>
+              <span class="sub-cat">أراضي</span>
+              <span class="sub-cat">مكاتب</span>
+            </div>
+          </div>
+        </a>
+        <a href="auctions.html?cat=electronics" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(133,43,0,.1)">
+            <span class="material-symbols-outlined" style="color:var(--tertiary)">devices</span>
+          </div>
+          <div>
+            <div class="big-cat-title">الإلكترونيات</div>
+            <div class="big-cat-desc">+85 مزاد نشط</div>
+            <div class="sub-cats">
+              <span class="sub-cat">هواتف</span>
+              <span class="sub-cat">حاسبات</span>
+              <span class="sub-cat">كاميرات</span>
+              <span class="sub-cat">إكسسوارات</span>
+            </div>
+          </div>
+        </a>
+        <a href="auctions.html?cat=equipment" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(217,119,6,.1)">
+            <span class="material-symbols-outlined" style="color:var(--warning-amber)">construction</span>
+          </div>
+          <div>
+            <div class="big-cat-title">المعدات والآليات</div>
+            <div class="big-cat-desc">+20 مزاد نشط</div>
+            <div class="sub-cats">
+              <span class="sub-cat">معدات بناء</span>
+              <span class="sub-cat">آليات زراعية</span>
+              <span class="sub-cat">مولدات</span>
+            </div>
+          </div>
+        </a>
+        <a href="auctions.html?cat=services" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(87,94,112,.1)">
+            <span class="material-symbols-outlined" style="color:var(--secondary)">design_services</span>
+          </div>
+          <div>
+            <div class="big-cat-title">الخدمات</div>
+            <div class="big-cat-desc">+12 مزاد نشط</div>
+            <div class="sub-cats">
+              <span class="sub-cat">تصميم</span>
+              <span class="sub-cat">استشارات</span>
+              <span class="sub-cat">نقل</span>
+            </div>
+          </div>
+        </a>
+        <a href="auctions.html?cat=antiques" class="big-cat-card reveal" style="text-decoration:none;color:inherit">
+          <div class="big-cat-icon" style="background:rgba(186,26,26,.1)">
+            <span class="material-symbols-outlined" style="color:var(--error)">diamond</span>
+          </div>
+          <div>
+            <div class="big-cat-title">المقتنيات والتحف</div>
+            <div class="big-cat-desc">+8 مزادات نشطة</div>
+            <div class="sub-cats">
+              <span class="sub-cat">مجوهرات</span>
+              <span class="sub-cat">تحف</span>
+              <span class="sub-cat">مقتنيات</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- All sub-categories -->
+  <section style="background:var(--surface-container);padding:64px 0">
+    <div class="container">
+      <h2 style="font-size:var(--text-headline-lg);font-weight:800;margin-bottom:40px">كل التصنيفات الفرعية</h2>
+      <div class="grid-6">
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">directions_car</span></div><h3>سيارات خاصة</h3><span class="cat-count">28 مزاد</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">local_shipping</span></div><h3>شاحنات</h3><span class="cat-count">8 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">airport_shuttle</span></div><h3>حافلات</h3><span class="cat-count">4 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">home</span></div><h3>منازل سكنية</h3><span class="cat-count">10 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">villa</span></div><h3>فيلات</h3><span class="cat-count">3 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">terrain</span></div><h3>أراضي</h3><span class="cat-count">5 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">smartphone</span></div><h3>هواتف ذكية</h3><span class="cat-count">42 مزاد</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">laptop</span></div><h3>حاسبات محمولة</h3><span class="cat-count">21 مزاد</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">camera_alt</span></div><h3>كاميرات</h3><span class="cat-count">12 مزاد</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">agriculture</span></div><h3>آليات زراعية</h3><span class="cat-count">7 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">bolt</span></div><h3>مولدات كهربائية</h3><span class="cat-count">5 مزادات</span></a>
+        <a href="auctions.html" class="cat-card"><div class="cat-icon"><span class="material-symbols-outlined">diamond</span></div><h3>مجوهرات</h3><span class="cat-count">4 مزادات</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><h3>MazadPay</h3><p>الوجهة الأولى للمزادات في موريتانيا.</p></div>
+      <div class="footer-col"><h4>روابط سريعة</h4><ul><li><a href="auctions.html">المزادات</a></li><li><a href="help.html">المساعدة</a></li></ul></div>
+      <div class="footer-col"><h4>قانوني</h4><ul><li><a href="privacy.html">الخصوصية</a></li><li><a href="terms.html">الشروط</a></li></ul></div>
+      <div class="footer-col"><h4>تواصل</h4><a href="contact.html" class="whatsapp-btn"><span class="material-symbols-outlined">chat</span> واتساب</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 MazadPay Mauritania. كل الحقوق محفوظة.</p></div>
+  </div>
+</footer>
+
+<!-- APP MODAL -->
+<div class="modal-overlay" id="app-modal" role="dialog" aria-modal="true">
+  <div class="modal-panel">
+    <button class="modal-close" id="app-modal-close" aria-label="إغلاق"><span class="material-symbols-outlined">close</span></button>
+    <div style="text-align:center;padding-top:8px">
+      <span class="material-symbols-outlined" style="font-size:64px;color:var(--primary);margin-bottom:16px;display:block">smartphone</span>
+      <h2 style="font-size:var(--text-headline-md);font-weight:800;margin-bottom:12px">التطبيق قادم قريباً!</h2>
+      <p style="color:var(--on-surface-variant);margin-bottom:28px;line-height:1.7">نعمل على إطلاق تطبيق MazadPay لنظامَي iOS وAndroid.</p>
+      <button class="btn-primary w-full" style="justify-content:center" id="app-modal-ok">حسناً، سأنتظر!</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.site-logo-img').forEach(img => {
+    img.addEventListener('error', () => { img.style.display = 'none'; });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    document.getElementById('mobile-menu')?.classList.remove('open');
+  });
+  window.addEventListener('scroll', () => { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 0); }, { passive: true });
+  const mm = document.getElementById('mobile-menu'), bb = document.getElementById('burger-btn');
+  bb.addEventListener('click', () => { mm.classList.add('open'); bb.setAttribute('aria-expanded','true'); });
+  document.getElementById('menu-close-btn').addEventListener('click', () => mm.classList.remove('open'));
+  document.getElementById('menu-backdrop').addEventListener('click', () => mm.classList.remove('open'));
+  const am = document.getElementById('app-modal');
+  document.getElementById('header-download-btn')?.addEventListener('click', () => am.classList.add('open'));
+  document.getElementById('app-modal-close').addEventListener('click', () => am.classList.remove('open'));
+  document.getElementById('app-modal-ok').addEventListener('click', () => am.classList.remove('open'));
+  am.addEventListener('click', e => { if (e.target === am) am.classList.remove('open'); });
+  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
