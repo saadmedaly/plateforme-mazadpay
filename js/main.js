@@ -14,6 +14,14 @@
     counters();
     countdowns();
     contactForm();
+    searchForm();
+  }
+
+  /* header search form — prevent navigation (front-end only) */
+  function searchForm() {
+    const form = document.querySelector(".header__search");
+    if (!form) return;
+    form.addEventListener("submit", (e) => e.preventDefault());
   }
 
   /* footer year */

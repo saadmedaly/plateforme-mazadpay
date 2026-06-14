@@ -1,0 +1,45 @@
+/* MazadPay — privacy.html page-specific i18n strings */
+Object.assign(window.I18N.ar, {
+  pp_eyebrow:"قانوني", pp_title:"سياسة الخصوصية",
+  pp_intro:"نحرص في مزاد باي على حماية خصوصيتك. توضّح هذه السياسة البيانات التي نجمعها وكيفية استخدامها وحمايتها داخل المنصة.",
+  pp_toc:"محتويات السياسة",
+  pp_h1:"البيانات التي نجمعها", pp_h2:"كيف نستخدم البيانات", pp_h3:"المحفظة الداخلية والمراجعة",
+  pp_h4:"حماية البيانات", pp_h5:"مشاركة البيانات", pp_h6:"حقوقك", pp_h7:"التعديلات والتواصل",
+  pp_p1:"نجمع البيانات التي تزوّدنا بها عند إنشاء الحساب واستخدام التطبيق، وتشمل عادةً:",
+  pp_l1a:"بيانات الحساب: الاسم، رقم الهاتف، والبريد الإلكتروني.",
+  pp_l1b:"بيانات الاستخدام: المزادات التي تتصفّحها، مزايداتك، وإعلاناتك.",
+  pp_l1c:"بيانات تقنية: نوع الجهاز ومعلومات أساسية لتحسين أداء التطبيق.",
+  pp_p2:"نستخدم بياناتك لتشغيل المنصة وتقديم خدماتها، وتحديدًا من أجل:",
+  pp_l2a:"إدارة حسابك وتمكينك من المشاركة في المزادات.",
+  pp_l2b:"معالجة شحن الرصيد الداخلي واسترجاع مبلغ التأمين.",
+  pp_l2c:"تنظيم خدمات التوصيل وتنسيقها.",
+  pp_l2d:"تحسين تجربة الاستخدام وأمان المنصة.",
+  pp_p3:"الرصيد داخل التطبيق هو رصيد داخلي مخصّص للمشاركة في المزادات فقط، وتتم مراجعة عمليات الشحن يدويًا من قبل الإدارة لضمان الموثوقية والشفافية. مزاد باي ليس مؤسسة مالية أو بنكية ولا يقدّم خدمات تحويل أموال.",
+  pp_p4:"نطبّق إجراءات حماية تقنية وتنظيمية مناسبة للحفاظ على بياناتك، ونعمل على منع الوصول غير المصرّح به إليها. ومع ذلك، لا يمكن ضمان أمان مطلق لأي نظام عبر الإنترنت.",
+  pp_p5:"لا نبيع بياناتك الشخصية. قد نشارك بعض البيانات الضرورية مع مزوّدي خدمات التوصيل أو الدفع المحلي لإتمام الخدمة المطلوبة، أو عند وجود التزام قانوني يقتضي ذلك.",
+  pp_p6:"يمكنك الوصول إلى بياناتك أو تعديلها أو طلب حذف حسابك في أي وقت عبر التواصل معنا. سنستجيب لطلبك وفق الإجراءات المعمول بها.",
+  pp_p7:"قد نقوم بتحديث هذه السياسة من وقت لآخر، وسننشر أي تغييرات على هذه الصفحة. لأي استفسار حول الخصوصية، تواصل معنا عبر البريد:"
+});
+Object.assign(window.I18N.fr, {
+  pp_eyebrow:"Légal", pp_title:"Politique de confidentialité",
+  pp_intro:"Chez MazadPay, nous protégeons votre vie privée. Cette politique explique les données que nous collectons, leur utilisation et leur protection au sein de la plateforme.",
+  pp_toc:"Sommaire",
+  pp_h1:"Données collectées", pp_h2:"Utilisation des données", pp_h3:"Portefeuille interne et vérification",
+  pp_h4:"Protection des données", pp_h5:"Partage des données", pp_h6:"Vos droits", pp_h7:"Modifications et contact",
+  pp_p1:"Nous collectons les données que vous nous fournissez lors de la création du compte et de l'utilisation de l'application, notamment :",
+  pp_l1a:"Données du compte : nom, numéro de téléphone et e-mail.",
+  pp_l1b:"Données d'utilisation : enchères consultées, vos offres et vos annonces.",
+  pp_l1c:"Données techniques : type d'appareil et informations de base pour améliorer l'application.",
+  pp_p2:"Nous utilisons vos données pour exploiter la plateforme et fournir ses services, notamment pour :",
+  pp_l2a:"Gérer votre compte et vous permettre de participer aux enchères.",
+  pp_l2b:"Traiter la recharge du solde interne et la récupération de la caution.",
+  pp_l2c:"Organiser et coordonner les services de livraison.",
+  pp_l2d:"Améliorer l'expérience d'utilisation et la sécurité de la plateforme.",
+  pp_p3:"Le solde dans l'application est un solde interne destiné uniquement à la participation aux enchères. Les recharges sont vérifiées manuellement par l'administration pour garantir fiabilité et transparence. MazadPay n'est pas une institution financière ou bancaire et ne fournit pas de services de transfert d'argent.",
+  pp_p4:"Nous appliquons des mesures de protection techniques et organisationnelles appropriées pour préserver vos données et empêcher tout accès non autorisé. Toutefois, aucune sécurité absolue ne peut être garantie sur Internet.",
+  pp_p5:"Nous ne vendons pas vos données personnelles. Nous pouvons partager certaines données nécessaires avec les prestataires de livraison ou de paiement local pour réaliser le service demandé, ou en cas d'obligation légale.",
+  pp_p6:"Vous pouvez accéder à vos données, les modifier ou demander la suppression de votre compte à tout moment en nous contactant. Nous traiterons votre demande selon les procédures en vigueur.",
+  pp_p7:"Nous pouvons mettre à jour cette politique de temps à autre et publierons tout changement sur cette page. Pour toute question relative à la confidentialité, contactez-nous par e-mail :",
+  ft_tagline:"La première application d'enchères numériques en Mauritanie."
+});
+window.I18N.ar.ft_tagline = "أول تطبيق للمزادات الرقمية في موريتانيا.";
