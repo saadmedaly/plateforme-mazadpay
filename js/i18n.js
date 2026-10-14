@@ -130,6 +130,26 @@ window.I18N = {
     lg_back: "العودة إلى الرئيسية",
     lg_updated: "آخر تحديث: يونيو 2026",
 
+    /* support page */
+    sp_eyebrow: "الدعم",
+    sp_title: "دعم مزاد باي — Support MazadPay",
+    sp_intro: "فريق مزاد باي جاهز لمساعدتك في كل ما يخص حسابك ومحفظتك ومزاداتك.",
+    sp_toc: "محتويات الصفحة",
+    sp_h1: "تواصل معنا", sp_h2: "الحساب وتسجيل الدخول", sp_h3: "المحفظة والمدفوعات",
+    sp_h4: "المزادات", sp_h5: "حذف الحساب", sp_h6: "الخصوصية",
+    sp_p1: "تواصل مع فريق الدعم عبر:",
+    sp_wa: "واتساب:", sp_tel: "الهاتف:",
+    sp_p1b: "عند التواصل، اذكر رقم الهاتف المسجّل في حسابك ووصفاً مختصراً للمشكلة.",
+    sp_l2a: "لم يصلك رمز التحقق (OTP)؟ تأكّد من صحة رقم الهاتف وانتظر دقيقة قبل طلب رمز جديد.",
+    sp_l2b: "نسيت الرمز السري؟ استخدم «نسيت كلمة المرور» في شاشة تسجيل الدخول.",
+    sp_l2c: "إذا استمرت المشكلة، تواصل معنا عبر واتساب.",
+    sp_l3a: "لإيداع أو سحب لم يظهر في محفظتك، أرسل لنا رقم العملية وتاريخها وإيصال الدفع.",
+    sp_l3b: "تتم مراجعة الإيداعات والسحوبات من قبل فريقنا قبل اعتمادها.",
+    sp_l4a: "لأي سؤال حول مزايدة أو إعلان أو مزاد فزت به، أرسل لنا اسم المزاد أو رقمه.",
+    sp_l4b: "تتم مراجعة الإعلانات الجديدة من قبل الإدارة قبل نشرها.",
+    sp_p5: "يمكنك حذف حسابك من داخل التطبيق: القائمة ← الإعدادات ← حذف الحساب. يتم حذف بياناتك الشخصية، مع الاحتفاظ ببعض سجلات المعاملات وفق المتطلبات القانونية.",
+    sp_p6: "لمعرفة كيفية جمع بياناتك وحمايتها، اطّلع على",
+
     /* marketplace */
     nav_auctions: "المزادات",
     search_ph: "ابحث عن سيارات، عقارات، إلكترونيات...",
@@ -302,6 +322,26 @@ window.I18N = {
 
     lg_back: "Retour à l'accueil",
     lg_updated: "Dernière mise à jour : juin 2026",
+
+    /* support page */
+    sp_eyebrow: "Support",
+    sp_title: "دعم مزاد باي — Support MazadPay",
+    sp_intro: "L'équipe MazadPay vous aide pour tout ce qui concerne votre compte, votre portefeuille et vos enchères.",
+    sp_toc: "Sommaire",
+    sp_h1: "Nous contacter", sp_h2: "Compte et connexion", sp_h3: "Portefeuille et paiements",
+    sp_h4: "Enchères", sp_h5: "Suppression du compte", sp_h6: "Confidentialité",
+    sp_p1: "Contactez l'équipe support via :",
+    sp_wa: "WhatsApp :", sp_tel: "Téléphone :",
+    sp_p1b: "Indiquez le numéro de téléphone de votre compte et une brève description du problème.",
+    sp_l2a: "Code de vérification (OTP) non reçu ? Vérifiez votre numéro et patientez une minute avant d'en demander un nouveau.",
+    sp_l2b: "Code secret oublié ? Utilisez « Mot de passe oublié » sur l'écran de connexion.",
+    sp_l2c: "Si le problème persiste, contactez-nous sur WhatsApp.",
+    sp_l3a: "Pour un dépôt ou un retrait absent de votre portefeuille, envoyez-nous la référence, la date et le reçu de paiement.",
+    sp_l3b: "Les dépôts et retraits sont vérifiés par notre équipe avant validation.",
+    sp_l4a: "Pour toute question sur une enchère, une annonce ou un lot remporté, indiquez le nom ou le numéro de l'enchère.",
+    sp_l4b: "Les nouvelles annonces sont vérifiées par l'administration avant publication.",
+    sp_p5: "Vous pouvez supprimer votre compte depuis l'application : Menu → Paramètres → « حذف الحساب » (Supprimer le compte). Vos données personnelles sont supprimées ; certains enregistrements de transactions sont conservés selon les obligations légales.",
+    sp_p6: "Pour savoir comment vos données sont collectées et protégées, consultez notre",
 
     /* marketplace */
     nav_auctions: "Enchères",
